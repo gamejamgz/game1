@@ -9,15 +9,26 @@
 script = ExtResource( 4 )
 
 [node name="walkzilla" type="Sprite" parent="."]
-position = Vector2( 170.281, 204.511 )
+position = Vector2( 170.281, 202.077 )
 scale = Vector2( 0.610528, 2.1319 )
 texture = ExtResource( 7 )
 centered = false
 hframes = 12
 script = ExtResource( 6 )
 
+[node name="Camera2D" type="Camera2D" parent="walkzilla"]
+offset = Vector2( 0, 200 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
 [node name="platform1" type="Sprite" parent="."]
-position = Vector2( 2.32032, 550.777 )
+position = Vector2( -142.911, 559.805 )
+scale = Vector2( 7.95079, 0.372432 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform8" type="Sprite" parent="."]
+position = Vector2( 1150.67, 561.356 )
 scale = Vector2( 7.95079, 0.372432 )
 texture = ExtResource( 1 )
 centered = false
