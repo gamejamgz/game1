@@ -12,8 +12,8 @@
 script = ExtResource( 4 )
 
 [node name="walkzilla" type="Sprite" parent="."]
-position = Vector2( 171.832, 202.077 )
-scale = Vector2( 0.610528, 2.1319 )
+position = Vector2( 86.9792, 236.018 )
+scale = Vector2( 2.40658, 2.42888 )
 texture = ExtResource( 7 )
 centered = false
 hframes = 12
@@ -24,54 +24,6 @@ offset = Vector2( 0, 200 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 
-[node name="platform1" type="Sprite" parent="."]
-position = Vector2( -142.911, 559.805 )
-scale = Vector2( 7.95079, 0.372432 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform8" type="Sprite" parent="."]
-position = Vector2( 1150.67, 561.356 )
-scale = Vector2( 7.95079, 0.372432 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform2" type="Sprite" parent="."]
-position = Vector2( 661.716, 209.989 )
-scale = Vector2( 0.771793, 0.581621 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform3" type="Sprite" parent="."]
-position = Vector2( 492.359, 474.1 )
-scale = Vector2( 0.857372, 0.581621 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform4" type="Sprite" parent="."]
-position = Vector2( 889.588, 284.232 )
-scale = Vector2( 1.9889, 0.581621 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform5" type="Sprite" parent="."]
-position = Vector2( 698.503, 425.415 )
-scale = Vector2( 1.9889, 0.581621 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform6" type="Sprite" parent="."]
-position = Vector2( 446.563, 184.429 )
-scale = Vector2( 0.952457, 0.229803 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="platform7" type="Sprite" parent="."]
-position = Vector2( 244.524, 144.265 )
-scale = Vector2( 0.952457, 0.229803 )
-texture = ExtResource( 1 )
-centered = false
-
 [node name="SoundEat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
@@ -81,3 +33,113 @@ stream = ExtResource( 3 )
 [node name="SoundLand" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -10.521
+
+[node name="map" type="Node" parent="."]
+
+[node name="platform1" type="Sprite" parent="map"]
+position = Vector2( -142.911, 559.805 )
+scale = Vector2( 7.95079, 0.372432 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform8" type="Sprite" parent="map"]
+position = Vector2( 1150.67, 561.356 )
+scale = Vector2( 7.95079, 0.372432 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform2" type="Sprite" parent="map"]
+position = Vector2( 661.716, 209.989 )
+scale = Vector2( 0.771793, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform3" type="Sprite" parent="map"]
+position = Vector2( 492.359, 474.1 )
+scale = Vector2( 0.857372, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform4" type="Sprite" parent="map"]
+position = Vector2( 889.588, 284.232 )
+scale = Vector2( 1.9889, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform5" type="Sprite" parent="map"]
+position = Vector2( 698.503, 425.415 )
+scale = Vector2( 1.9889, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform6" type="Sprite" parent="map"]
+position = Vector2( 446.563, 184.429 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform7" type="Sprite" parent="map"]
+position = Vector2( 244.524, 144.265 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform9" type="Sprite" parent="map"]
+position = Vector2( 244.524, 144.265 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform10" type="Sprite" parent="map"]
+position = Vector2( 244.524, 144.265 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform11" type="Sprite" parent="map"]
+position = Vector2( 1787.43, 377.61 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform14" type="Sprite" parent="map"]
+position = Vector2( 2017.95, 323.87 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform15" type="Sprite" parent="map"]
+position = Vector2( 2193.31, 196.591 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform16" type="Sprite" parent="map"]
+position = Vector2( 2364.43, 145.679 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform17" type="Sprite" parent="map"]
+position = Vector2( 2493.12, 62.2406 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform12" type="Sprite" parent="map"]
+position = Vector2( 1763.39, 469.534 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform13" type="Sprite" parent="map"]
+position = Vector2( 1644.6, 521.86 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform18" type="Sprite" parent="map"]
+position = Vector2( 1440.95, 367.711 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
