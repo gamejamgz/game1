@@ -6,6 +6,7 @@ var dy = 0
 var dx = 0
 
 var state = "falling"
+var standing_on = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,32 +33,38 @@ func _process(delta):
 	var h = walkzilla.get_height()
 	var x = walkzilla.position.x
 	var y = walkzilla.position.y
-	var platforms = [$platform1, $platform2]
+	var platforms = [$platform1, $platform2, 
+					$platform3, $platform4, $platform5,
+					$platform6, $platform7]
 	
-	var is_over_platform = null
+	var platforms_underneath = []
 	
 	for p in platforms:
 		var platform_w = p.texture.get_width() * p.scale[0]
 		if x < p.position.x + platform_w and x + w > p.position.x:
-			is_over_platform = p
-			
+			platforms_underneath.append(p)
 	
 	if state == "standing":
-		if not is_over_platform:
+		if not standing_on in platforms_underneath:
 			state = "falling"
+			print("Fell off from " + str(standing_on))
+			standing_on = null
 		else:
 			if Input.is_key_pressed(KEY_SPACE):
-				dy = -15
+				dy = -13
+				print("Jumped")
 				state = "jumping"
 	else:
 		dy += 0.5
 		if dy > 0:
-			if is_over_platform:
-				if y + h < is_over_platform.position.y \
-				and y + h + dy >= is_over_platform.position.y:
-					state = "standing"
-					dy = 0
-					walkzilla.position.y = is_over_platform.position.y - h
+			if platforms_underneath:
+				for p in  platforms_underneath:
+					if y + h <= p.position.y and y + h + dy >= p.position.y:
+						print("Landed on " + str(p))
+						state = "standing"
+						standing_on = p
+						dy = 0
+						walkzilla.position.y = p.position.y - h
 			else:
 				state = "falling"
 		else:

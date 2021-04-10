@@ -8,22 +8,52 @@
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="platform1" type="Sprite" parent="."]
-position = Vector2( 89.9515, 410.81 )
-scale = Vector2( 2.27415, 0.638673 )
-texture = ExtResource( 1 )
-centered = false
-
 [node name="walkzilla" type="Sprite" parent="."]
-position = Vector2( 167.847, 105.926 )
-scale = Vector2( 1.42599, 2.1319 )
+position = Vector2( 170.281, 204.511 )
+scale = Vector2( 0.610528, 2.1319 )
 texture = ExtResource( 7 )
 centered = false
 hframes = 12
 script = ExtResource( 6 )
 
+[node name="platform1" type="Sprite" parent="."]
+position = Vector2( 2.32032, 550.777 )
+scale = Vector2( 7.95079, 0.372432 )
+texture = ExtResource( 1 )
+centered = false
+
 [node name="platform2" type="Sprite" parent="."]
-position = Vector2( 705.806, 487.488 )
+position = Vector2( 661.716, 209.989 )
+scale = Vector2( 0.771793, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform3" type="Sprite" parent="."]
+position = Vector2( 492.359, 474.1 )
+scale = Vector2( 0.857372, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform4" type="Sprite" parent="."]
+position = Vector2( 889.588, 284.232 )
 scale = Vector2( 1.9889, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform5" type="Sprite" parent="."]
+position = Vector2( 698.503, 425.415 )
+scale = Vector2( 1.9889, 0.581621 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform6" type="Sprite" parent="."]
+position = Vector2( 446.563, 184.429 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="platform7" type="Sprite" parent="."]
+position = Vector2( 244.524, 144.265 )
+scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
 centered = false
