@@ -2,6 +2,7 @@
 
 [ext_resource path="res://myscript.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://walk1.png" type="Texture" id=3]
 [ext_resource path="res://Maingame.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
@@ -12,3 +13,9 @@ position = Vector2( 192.499, 135.052 )
 scale = Vector2( 2.41388, 2.28886 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
+[node name="Walkzilla" type="Sprite" parent="."]
+position = Vector2( 156.86, 154.34 )
+scale = Vector2( 2.97808, 2.97808 )
+texture = ExtResource( 3 )
+hframes = 12
+script = ExtResource( 5 )
