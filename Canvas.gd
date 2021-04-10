@@ -72,4 +72,10 @@ func _process(delta):
 			
 	walkzilla.position.x += dx
 	walkzilla.position.y += dy
+	
+	if walkzilla.position.y > 1000:
+		walkzilla.flip_v = true
+		if walkzilla.position.y > 2000:
+			get_tree().reload_current_scene()
+
 			
