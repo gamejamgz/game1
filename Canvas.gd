@@ -11,6 +11,7 @@ var standing_on = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Scene ready...")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -53,6 +54,7 @@ func _process(delta):
 			if Input.is_key_pressed(KEY_SPACE):
 				dy = -13
 				print("Jumped")
+				$SoundJump.play()
 				state = "jumping"
 	else:
 		dy += 0.5
@@ -75,6 +77,7 @@ func _process(delta):
 	
 	if walkzilla.position.y > 1000:
 		walkzilla.flip_v = true
+			
 		if walkzilla.position.y > 2000:
 			get_tree().reload_current_scene()
 
