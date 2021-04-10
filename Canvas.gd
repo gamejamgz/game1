@@ -63,6 +63,7 @@ func _process(delta):
 				for p in  platforms_underneath:
 					if y + h <= p.position.y and y + h + dy >= p.position.y:
 						print("Landed on " + str(p))
+						$SoundLand.play()
 						state = "standing"
 						standing_on = p
 						dy = 0
