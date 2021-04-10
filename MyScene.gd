@@ -9,16 +9,16 @@ var block_down = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("I am ready")
-	var godzilla = $godzilla
-	print(godzilla)
+	var walkzilla = $walkzilla
+	print(walkzilla)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	var godzilla = $godzilla
+	var walkzilla = $walkzilla
 	
-	godzilla.position.x += dx
-	godzilla.position.y += dy
+	walkzilla.position.x += dx
+	walkzilla.position.y += dy
 	
 	if Input.is_key_pressed(KEY_LEFT):
 		dx = -HOR_SPEED

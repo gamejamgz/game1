@@ -34,3 +34,5 @@ func next_frame():
 		self.frame +=1
 	else:
 		self.frame = 0
+		
+
