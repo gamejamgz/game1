@@ -2,6 +2,8 @@ extends Node2D
 
 var HOR_SPEED = 8
 
+var health = 200
+
 var dy = 0
 var dx = 0
 
@@ -15,6 +17,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	$walkzilla/HealthbarNode.set_health(health)
 	
 	var walkzilla = $walkzilla
 	
@@ -61,6 +65,7 @@ func _physics_process(delta):
 				for p in  platforms_underneath:
 					if y + h <= p.position.y and y + h + dy >= p.position.y:
 						print("Landed on " + str(p))
+						health -= 5
 						$SoundLand.play()
 						state = "standing"
 						standing_on = p
