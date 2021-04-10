@@ -14,10 +14,7 @@ func _ready():
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	#print("platform type ",$platform1.get_index())
-	#print("platform type ",$platform2.get_index())
+func _physics_process(delta):
 	
 	var walkzilla = $walkzilla
 	
@@ -38,10 +35,6 @@ func _process(delta):
 	var x = walkzilla.position.x
 	var y = walkzilla.position.y
 	var platforms = $map.get_children()
-	
-	#var platforms = [$platform1, $platform2, 
-#					$platform3, $platform4, $platform5,
-#					$platform6, $platform7, $platform8]
 	
 	var platforms_underneath = []
 	
