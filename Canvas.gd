@@ -1,6 +1,6 @@
 extends Node2D
 
-var HOR_SPEED = 5
+var HOR_SPEED = 8
 
 var dy = 0
 var dx = 0
@@ -28,15 +28,18 @@ func _process(delta):
 		dx = 0
 		walkzilla.is_walking = false
 		
-	var w = walkzilla.texture.get_width() * walkzilla.scale[0] / 12.0
-	var h = walkzilla.texture.get_height() * walkzilla.scale[1]
+	var w = walkzilla.get_width()
+	var h = walkzilla.get_height()
 	var x = walkzilla.position.x
 	var y = walkzilla.position.y
-	var platform = $platform
-	var platform_w = platform.texture.get_width() * platform.scale[0]
+	var platforms = [$platform1, $platform2]
 	
-	var is_over_platform = x < platform.position.x + platform_w \
-			and x + w > platform.position.x
+	var is_over_platform = null
+	
+	for p in platforms:
+		var platform_w = p.texture.get_width() * p.scale[0]
+		if x < p.position.x + platform_w and x + w > p.position.x:
+			is_over_platform = p
 			
 	
 	if state == "standing":
@@ -44,14 +47,17 @@ func _process(delta):
 			state = "falling"
 		else:
 			if Input.is_key_pressed(KEY_SPACE):
-				dy = -10
+				dy = -15
 				state = "jumping"
 	else:
 		dy += 0.5
 		if dy > 0:
-			if is_over_platform and y + h < platform.position.y and y + h + dy >= platform.position.y:
-				state = "standing"
-				dy = 0
+			if is_over_platform:
+				if y + h < is_over_platform.position.y \
+				and y + h + dy >= is_over_platform.position.y:
+					state = "standing"
+					dy = 0
+					walkzilla.position.y = is_over_platform.position.y - h
 			else:
 				state = "falling"
 		else:
