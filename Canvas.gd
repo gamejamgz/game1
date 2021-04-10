@@ -13,16 +13,25 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	var godzilla = $godzilla
+	
+	
+	var walkzilla = $walkzilla
+	
+	var godzilla = walkzilla
 	
 	
 	
 	if Input.is_key_pressed(KEY_LEFT):
 		dx = -HOR_SPEED
+		walkzilla.dir_left()
+		walkzilla.is_walking = true
 	elif Input.is_key_pressed(KEY_RIGHT):
 		dx = HOR_SPEED
+		walkzilla.dir_right()
+		walkzilla.is_walking = true
 	else:
 		dx = 0
+		walkzilla.is_walking = false
 		
 		
 	var w = godzilla.texture.get_width() * godzilla.scale[0]
