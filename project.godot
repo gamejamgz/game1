@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MyFirstProject"
-run/main_scene="res://MyScene.tscn"
+run/main_scene="res://Walkzilla-scene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
