@@ -1,5 +1,4 @@
-extends Sprite
-
+extends Node2D
 
 var HOR_SPEED = 5
 
@@ -10,15 +9,16 @@ var block_down = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("I am ready")
+	var godzilla = $godzilla
+	print(godzilla)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	var platform = get_node("Canvas/platform")
-	print("Platform: " + str(platform))
+	var godzilla = $godzilla
 	
-	self.position.x += dx
-	self.position.y += dy
+	godzilla.position.x += dx
+	godzilla.position.y += dy
 	
 	if Input.is_key_pressed(KEY_LEFT):
 		dx = -HOR_SPEED
@@ -42,4 +42,4 @@ func _process(delta):
 			
 	
 	
-	
+		

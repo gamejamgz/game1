@@ -4,7 +4,7 @@ extends Sprite
 # Declare member variables here. Examples:
 var nextframe_countdown = 0
 
-var is_walking = false
+var is_walking = true
 
 
 
