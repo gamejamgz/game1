@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://eat.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Canvas.gd" type="Script" id=4]
 [ext_resource path="res://land.wav" type="AudioStream" id=5]
 [ext_resource path="res://components/walkzilla/walkzilla.tscn" type="PackedScene" id=6]
+[ext_resource path="res://platform_moving.gd" type="Script" id=7]
 [ext_resource path="res://healthComponent/Healthbar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Person1.png" type="Texture" id=9]
 [ext_resource path="res://Person.gd" type="Script" id=10]
@@ -138,6 +139,13 @@ position = Vector2( 1440.95, 367.711 )
 scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="platform20" type="Sprite" parent="map"]
+position = Vector2( 330.231, 313.007 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 7 )
 
 [node name="humans" type="Node2D" parent="."]
 
