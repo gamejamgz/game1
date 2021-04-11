@@ -41,6 +41,9 @@ func eat():
 	
 func is_eating():
 	return eat_countdown > 0
+
+func die():
+	$sprite.flip_v = true
 	
 
 func next_walk():

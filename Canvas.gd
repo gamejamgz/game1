@@ -104,7 +104,7 @@ func _physics_process(delta):
 	walkzilla.position.y += dy
 	
 	if walkzilla.position.y > 1000:
-		walkzilla.flip_v = true
+		walkzilla.die()
 			
 		if walkzilla.position.y > 2000:
 			get_tree().reload_current_scene()
