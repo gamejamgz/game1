@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://eat.wav" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://walk1.png" type="Texture" id=7]
 [ext_resource path="res://healthComponent/Healthbar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Person1.png" type="Texture" id=9]
+[ext_resource path="res://Person.gd" type="Script" id=10]
 
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
@@ -164,28 +165,22 @@ centered = false
 position = Vector2( -84.3085, 529.25 )
 scale = Vector2( 0.499862, 0.308777 )
 texture = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Person2" type="Sprite" parent="humans"]
 position = Vector2( 1049.53, 260.123 )
 scale = Vector2( 0.36048, 0.35228 )
 texture = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Person3" type="Sprite" parent="humans"]
 position = Vector2( -327.527, 435.655 )
 scale = Vector2( 0.36048, 0.35228 )
 texture = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Person4" type="Sprite" parent="humans"]
 position = Vector2( 494.429, 161.669 )
 scale = Vector2( 0.36048, 0.35228 )
 texture = ExtResource( 9 )
-
-[node name="Person5" type="Sprite" parent="humans"]
-position = Vector2( 305.943, 124.749 )
-scale = Vector2( 0.36048, 0.35228 )
-texture = ExtResource( 9 )
-
-[node name="Person6" type="Sprite" parent="humans"]
-position = Vector2( 1353.31, 537.347 )
-scale = Vector2( 0.36048, 0.35228 )
-texture = ExtResource( 9 )
+script = ExtResource( 10 )

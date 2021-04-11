@@ -18,7 +18,7 @@ func set_health(new_health):
 
 func update_health():
 	#$Healthbar.rect_size = (Vector2(health,78))
-	$Healthbar.margin_right=health * 3
+	$Healthbar.margin_right = health * 3
 	#print(health)
 	#print($Healthbar.rect_size)
 
