@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://eat.wav" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Walkzilla-script.gd" type="Script" id=6]
 [ext_resource path="res://walk1.png" type="Texture" id=7]
 [ext_resource path="res://healthComponent/Healthbar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Person1.png" type="Texture" id=9]
 
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
@@ -26,7 +27,7 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="HealthbarNode" parent="walkzilla" instance=ExtResource( 8 )]
-position = Vector2( -309.678, -92.4584 )
+position = Vector2( -309.409, -87.6582 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="SoundEat" type="AudioStreamPlayer" parent="."]
@@ -113,6 +114,12 @@ scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
 centered = false
 
+[node name="platform19" type="Sprite" parent="map"]
+position = Vector2( -389.297, 466.568 )
+scale = Vector2( 0.952457, 0.229803 )
+texture = ExtResource( 1 )
+centered = false
+
 [node name="platform15" type="Sprite" parent="map"]
 position = Vector2( 2193.31, 196.591 )
 scale = Vector2( 0.952457, 0.229803 )
@@ -148,3 +155,13 @@ position = Vector2( 1440.95, 367.711 )
 scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="humans" type="Node2D" parent="."]
+
+[node name="Person1" type="Sprite" parent="humans"]
+position = Vector2( -108.598, 462.859 )
+texture = ExtResource( 9 )
+
+[node name="Person2" type="Sprite" parent="humans"]
+position = Vector2( 15.7642, 451.2 )
+texture = ExtResource( 9 )

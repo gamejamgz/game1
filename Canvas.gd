@@ -39,7 +39,23 @@ func _physics_process(delta):
 	var x = walkzilla.position.x
 	var y = walkzilla.position.y
 	var platforms = $map.get_children()
+
+	var humans = $humans.get_children()
 	
+	for human in humans:
+		var human_w = human.texture.get_width() * human.scale[0]
+		var human_h = human.texture.get_height() * human.scale[1]	
+		if x + w > human.position.x \
+			and x < human.position.x + human_w \
+			and y + h > human.position.y \
+			and y < human.position.y + human_h:
+				print("Colliding with human: " + str(human))
+				human.queue_free()
+				$SoundEat.play()
+				health += 10
+				
+		
+		
 	var platforms_underneath = []
 	
 	for p in platforms:
