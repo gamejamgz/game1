@@ -7,12 +7,16 @@ var health = 200
 var dy = 0
 var dx = 0
 
-var state = "falling"
+enum {STANDING, JUMPING, FALLING}
+
+var state = FALLING
 var standing_on = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Scene ready...")
+
+
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,9 +69,9 @@ func _physics_process(delta):
 		if x < p.position.x + platform_w and x + w > p.position.x:
 			platforms_underneath.append(p)
 	
-	if state == "standing":
+	if state == STANDING:
 		if not standing_on in platforms_underneath:
-			state = "falling"
+			state = FALLING
 			print("Fell off from " + str(standing_on))
 			standing_on = null
 		else:
@@ -75,7 +79,7 @@ func _physics_process(delta):
 				dy = -13
 				print("Jumped")
 				$SoundJump.play()
-				state = "jumping"
+				state = JUMPING
 	else:
 		dy += 0.5
 		if dy > 0:
@@ -85,14 +89,14 @@ func _physics_process(delta):
 						print("Landed on " + str(p))
 						
 						$SoundLand.play()
-						state = "standing"
+						state = STANDING
 						standing_on = p
 						dy = 0
 						walkzilla.position.y = p.position.y - h
 			else:
-				state = "falling"
+				state = FALLING
 		else:
-			state = "jumping"
+			state = JUMPING
 			
 	walkzilla.position.x += dx
 	walkzilla.position.y += dy
