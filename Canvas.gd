@@ -82,7 +82,7 @@ func _physics_process(delta):
 		and b.position.y < y + h and b.position.y > y:
 			b.queue_free()
 			health -= 10
-		
+
 	var platforms_underneath = []
 	
 	for p in platforms:

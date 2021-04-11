@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://eat.wav" type="AudioStream" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Person1.png" type="Texture" id=9]
 [ext_resource path="res://Person.gd" type="Script" id=10]
 [ext_resource path="res://Soldier.gd" type="Script" id=11]
+[ext_resource path="res://soldier_shoot.wav" type="AudioStream" id=12]
 
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
@@ -23,6 +24,10 @@ stream = ExtResource( 3 )
 
 [node name="SoundLand" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.521
+
+[node name="SoundSoldierShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 volume_db = -10.521
 
 [node name="map" type="Node" parent="."]

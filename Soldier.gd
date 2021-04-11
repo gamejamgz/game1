@@ -11,8 +11,6 @@ var shoot_cooldown = 0.5
 func _ready():
 	pass # Replace with function body.
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	shoot_cooldown -= delta
@@ -29,3 +27,5 @@ func _process(delta):
 		bullet.scale[1] = 4
 		var bullets = get_node("/root/Canvas/bullets")
 		bullets.add_child(bullet)
+		
+		get_node("/root/Canvas/SoundSoldierShoot").play()
