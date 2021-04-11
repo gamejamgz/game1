@@ -12,6 +12,8 @@ enum {STANDING, JUMPING, FALLING}
 var state = FALLING
 var standing_on = null
 
+var has_won = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Scene ready...")
@@ -75,6 +77,23 @@ func _physics_process(delta):
 				$SoundEat.play()
 				health += 50
 				walkzilla.eat()
+				
+	var goal = $Goal
+	if goal.position.x > x and goal.position.x < x + w \
+	and goal.position.y > y and goal.position.y < y + h:
+		if not has_won:
+			has_won = true
+			print("YOU WIN!")
+			var victory_screen = Sprite.new()
+			victory_screen.texture = load("res://victory_screen.png")
+			victory_screen.position.x = 100
+			victory_screen.position.y = 100
+			victory_screen.scale[0] = 8
+			victory_screen.scale[1] = 4
+			victory_screen.z_index = 999
+			get_node("/root/Canvas/walkzilla").add_child(victory_screen)
+			get_node("/root/Canvas/SoundVictory").play()
+		
 				
 	var bullets =  $bullets.get_children()
 	for b in bullets:
