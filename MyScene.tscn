@@ -197,3 +197,5 @@ position = Vector2( -508.12, -419.317 )
 scale = Vector2( 0.481316, 0.485776 )
 z_index = 1000
 z_as_relative = false
+
+[node name="bullets" type="Node2D" parent="."]

@@ -75,6 +75,13 @@ func _physics_process(delta):
 				$SoundEat.play()
 				health += 50
 				walkzilla.eat()
+				
+	var bullets =  $bullets.get_children()
+	for b in bullets:
+		if b.position.x < x + w and b.position.x > x \
+		and b.position.y < y + h and b.position.y > y:
+			b.queue_free()
+			health -= 10
 		
 	var platforms_underneath = []
 	

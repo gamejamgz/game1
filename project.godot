@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://bullet.gd"
+} ]
 _global_script_class_icons={
-
+"Bullet": ""
 }
 
 [application]
