@@ -30,8 +30,7 @@ func _physics_process(delta):
 	
 	var walkzilla = $walkzilla
 	
-	if Input.is_key_pressed(KEY_DOWN):
-		walkzilla.eat()
+	
 	if Input.is_key_pressed(KEY_LEFT):
 		dx = -HOR_SPEED
 		walkzilla.dir_left()
@@ -63,6 +62,7 @@ func _physics_process(delta):
 				human.queue_free()
 				$SoundEat.play()
 				health += 50
+				walkzilla.eat()
 		
 	var platforms_underneath = []
 	
