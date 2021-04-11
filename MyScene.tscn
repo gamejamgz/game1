@@ -14,7 +14,7 @@
 script = ExtResource( 4 )
 
 [node name="walkzilla" type="Sprite" parent="."]
-position = Vector2( 86.9792, 236.018 )
+position = Vector2( 96.695, 307.915 )
 scale = Vector2( 2.40658, 2.42888 )
 texture = ExtResource( 7 )
 centered = false
@@ -27,8 +27,10 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="HealthbarNode" parent="walkzilla" instance=ExtResource( 8 )]
-position = Vector2( -309.409, -87.6582 )
+position = Vector2( -309.409, -87.9249 )
 scale = Vector2( 0.2, 0.2 )
+z_index = 1000
+z_as_relative = false
 
 [node name="SoundEat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -159,9 +161,31 @@ centered = false
 [node name="humans" type="Node2D" parent="."]
 
 [node name="Person1" type="Sprite" parent="humans"]
-position = Vector2( -108.598, 462.859 )
+position = Vector2( -84.3085, 529.25 )
+scale = Vector2( 0.499862, 0.308777 )
 texture = ExtResource( 9 )
 
 [node name="Person2" type="Sprite" parent="humans"]
-position = Vector2( 15.7642, 451.2 )
+position = Vector2( 1049.53, 260.123 )
+scale = Vector2( 0.36048, 0.35228 )
+texture = ExtResource( 9 )
+
+[node name="Person3" type="Sprite" parent="humans"]
+position = Vector2( -327.527, 435.655 )
+scale = Vector2( 0.36048, 0.35228 )
+texture = ExtResource( 9 )
+
+[node name="Person4" type="Sprite" parent="humans"]
+position = Vector2( 494.429, 161.669 )
+scale = Vector2( 0.36048, 0.35228 )
+texture = ExtResource( 9 )
+
+[node name="Person5" type="Sprite" parent="humans"]
+position = Vector2( 305.943, 124.749 )
+scale = Vector2( 0.36048, 0.35228 )
+texture = ExtResource( 9 )
+
+[node name="Person6" type="Sprite" parent="humans"]
+position = Vector2( 1353.31, 537.347 )
+scale = Vector2( 0.36048, 0.35228 )
 texture = ExtResource( 9 )

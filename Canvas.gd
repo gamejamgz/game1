@@ -17,6 +17,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+
+	health -= 15 * delta
+	if health <= 0:
+		get_tree().reload_current_scene()
 	
 	$walkzilla/HealthbarNode.set_health(health)
 	
@@ -52,9 +56,7 @@ func _physics_process(delta):
 				print("Colliding with human: " + str(human))
 				human.queue_free()
 				$SoundEat.play()
-				health += 10
-				
-		
+				health += 50
 		
 	var platforms_underneath = []
 	
@@ -81,7 +83,7 @@ func _physics_process(delta):
 				for p in  platforms_underneath:
 					if y + h <= p.position.y and y + h + dy >= p.position.y:
 						print("Landed on " + str(p))
-						health -= 5
+						
 						$SoundLand.play()
 						state = "standing"
 						standing_on = p
