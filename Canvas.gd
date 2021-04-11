@@ -30,6 +30,8 @@ func _physics_process(delta):
 	
 	var walkzilla = $walkzilla
 	
+	if Input.is_key_pressed(KEY_DOWN):
+		walkzilla.eat()
 	if Input.is_key_pressed(KEY_LEFT):
 		dx = -HOR_SPEED
 		walkzilla.dir_left()
@@ -75,7 +77,7 @@ func _physics_process(delta):
 			print("Fell off from " + str(standing_on))
 			standing_on = null
 		else:
-			if Input.is_key_pressed(KEY_SPACE):
+			if Input.is_key_pressed(KEY_UP):
 				dy = -13
 				print("Jumped")
 				$SoundJump.play()
