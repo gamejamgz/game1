@@ -20,10 +20,8 @@ func dir_right():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print("eat_countdown ", eat_countdown)
 	if(eat_countdown > 0):
 		eat_countdown -= 1
-		print("eat_countdown ", eat_countdown)
 	
 	if(is_walking):
 		if(nextwalk_countdown <= 0):
