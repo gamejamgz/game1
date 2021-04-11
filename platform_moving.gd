@@ -10,8 +10,8 @@ var counter = 0
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	counter += 0.1
-	self.position.x = 100+sin(counter)*100
+func update_position(delta):
+	counter += 0.05
+	var dx = 100 + sin(counter) * 100 - self.position.x
+	self.position.x += dx
+	return dx

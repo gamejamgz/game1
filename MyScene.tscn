@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://eat.wav" type="AudioStream" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://healthComponent/Healthbar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Person1.png" type="Texture" id=9]
 [ext_resource path="res://Person.gd" type="Script" id=10]
+[ext_resource path="res://Soldier.gd" type="Script" id=11]
 
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
@@ -140,7 +141,9 @@ scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="platform20" type="Sprite" parent="map"]
+[node name="moving_platforms" type="Node2D" parent="map"]
+
+[node name="moving_platform_1" type="Sprite" parent="map/moving_platforms"]
 position = Vector2( 330.231, 313.007 )
 scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 1 )
@@ -173,18 +176,24 @@ scale = Vector2( 0.36048, 0.35228 )
 texture = ExtResource( 9 )
 script = ExtResource( 10 )
 
+[node name="Soldier1" type="Sprite" parent="humans"]
+position = Vector2( 545.923, 442.779 )
+scale = Vector2( 0.860618, 0.429619 )
+texture = ExtResource( 9 )
+script = ExtResource( 11 )
+
 [node name="walkzilla" parent="." instance=ExtResource( 6 )]
-position = Vector2( 54.5139, 162.609 )
+position = Vector2( 145.195, 363.402 )
 
 [node name="Camera2D" type="Camera2D" parent="walkzilla"]
-position = Vector2( 42.1811, 145.306 )
+position = Vector2( 247.508, -167.543 )
 scale = Vector2( 2.40658, 2.42888 )
 offset = Vector2( 0, 200 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="HealthbarNode" parent="walkzilla" instance=ExtResource( 8 )]
-position = Vector2( -702.436, -68.2534 )
+position = Vector2( -508.12, -419.317 )
 scale = Vector2( 0.481316, 0.485776 )
 z_index = 1000
 z_as_relative = false

@@ -17,8 +17,6 @@ func _ready():
 	print("Scene ready...")
 
 
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
@@ -47,7 +45,21 @@ func _physics_process(delta):
 	var h = walkzilla.get_height()
 	var x = walkzilla.position.x
 	var y = walkzilla.position.y
-	var platforms = $map.get_children()
+	var platforms = []
+	for child in $map.get_children():
+		if child.get_class() == "Node2D":
+			for moving_platform in child.get_children():
+				platforms.append(moving_platform)
+		else:
+			platforms.append(child)
+		
+	
+	var moving_platforms = $map.get_node("moving_platforms").get_children()
+	
+	for moving_platform in moving_platforms: 
+		var dx = moving_platform.update_position(delta)
+		if standing_on == moving_platform:
+			walkzilla.position.x += dx
 
 	var humans = $humans.get_children()
 	
@@ -82,6 +94,7 @@ func _physics_process(delta):
 				print("Jumped")
 				$SoundJump.play()
 				state = JUMPING
+				standing_on = null
 	else:
 		dy += 0.5
 		if dy > 0:
