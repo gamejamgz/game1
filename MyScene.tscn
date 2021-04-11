@@ -13,6 +13,7 @@
 [ext_resource path="res://Soldier.gd" type="Script" id=11]
 [ext_resource path="res://soldier_shoot.wav" type="AudioStream" id=12]
 [ext_resource path="res://victory.wav" type="AudioStream" id=13]
+[ext_resource path="res://skyline manhatten.png" type="Texture" id=12]
 
 [node name="Canvas" type="Node2D"]
 script = ExtResource( 4 )
@@ -212,3 +213,16 @@ z_as_relative = false
 
 [node name="Goal" type="Node2D" parent="."]
 position = Vector2( 2553.92, 38.2155 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1500, 0 )
+
+[node name="icon" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( -0.388641, -88.403 )
+scale = Vector2( 1.80091, 1.54309 )
+texture = ExtResource( 12 )
