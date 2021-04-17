@@ -20,12 +20,12 @@ func _process(delta):
 		print(str(self) + " is shooting")
 		
 		var bullet = Bullet.new()
-		
-		bullet.texture = load("res://bullet.png")
-		bullet.position = self.position
-		bullet.scale[0] = 8
-		bullet.scale[1] = 4
-		var bullets = get_node("/root/Canvas/bullets")
-		bullets.add_child(bullet)
-		
-		get_node("/root/Canvas/SoundSoldierShoot").play()
+#
+#		bullet.texture = load("res://bullet.png")
+#		bullet.position = self.position
+#		bullet.scale[0] = 8
+#		bullet.scale[1] = 4
+#		var bullets = get_node("/root/Canvas/bullets")
+#		bullets.add_child(bullet)
+#
+#		get_node("/root/Canvas/SoundSoldierShoot").play()

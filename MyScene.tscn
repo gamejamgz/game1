@@ -202,7 +202,7 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="HealthbarNode" parent="walkzilla" instance=ExtResource( 8 )]
-position = Vector2( -508.12, -419.317 )
+position = Vector2( -508.12, -417.535 )
 scale = Vector2( 0.481316, 0.485776 )
 z_index = 1000
 z_as_relative = false
@@ -219,8 +219,14 @@ position = Vector2( 2553.92, 38.2155 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1500, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="icon" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( -0.388641, -88.403 )
+position = Vector2( 7.10294, -79.4132 )
 scale = Vector2( 1.80091, 1.54309 )
 texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}

@@ -17,14 +17,22 @@ var has_won = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Scene ready...")
+	get_tree().paused = false
+	#$MenuScene.set_gamescene(self)
+	#get_tree().paused = true
+	
 
+func die():
+	print("RELOADING SCENE")
+	get_tree().change_scene("res://components/menu/Menu.tscn")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
 	health -= 15 * delta
 	if health <= 0:
-		get_tree().reload_current_scene()
+		self.die()
 	
 	$walkzilla/HealthbarNode.set_health(health)
 	
@@ -83,16 +91,23 @@ func _physics_process(delta):
 	and goal.position.y > y and goal.position.y < y + h:
 		if not has_won:
 			has_won = true
+			#$MenuScene.show_menu()
+			"""
 			print("YOU WIN!")
-			var victory_screen = Sprite.new()
+			#var victory_screen = Sprite.new()
 			victory_screen.texture = load("res://victory_screen.png")
 			victory_screen.position.x = 100
-			victory_screen.position.y = 100
+			#victory_screen.position.y = 100
+			victory_screen.position.y = 0
 			victory_screen.scale[0] = 8
 			victory_screen.scale[1] = 4
 			victory_screen.z_index = 999
 			get_node("/root/Canvas/walkzilla").add_child(victory_screen)
 			get_node("/root/Canvas/SoundVictory").play()
+			$MenuScene.z_index=1000
+			$MenuScene.show_menu()
+			"""
+			
 		
 				
 	var bullets =  $bullets.get_children()
@@ -146,6 +161,6 @@ func _physics_process(delta):
 		walkzilla.die()
 			
 		if walkzilla.position.y > 2000:
-			get_tree().reload_current_scene()
+			self.die()
 
 			
