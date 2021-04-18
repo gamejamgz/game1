@@ -85,7 +85,7 @@ z_index = 1000
 z_as_relative = false
 
 [node name="bullets" type="Node2D" parent="."]
-position = Vector2( 78.5724, 136.94 )
+position = Vector2( -118.536, -3.11365 )
 
 [node name="Goal" type="Node2D" parent="."]
 position = Vector2( 2553.92, 38.2155 )

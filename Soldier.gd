@@ -20,11 +20,12 @@ func _process(delta):
 		print(str(self) + " is shooting")
 		
 		var bullet = Bullet.new()
-		
+		print("shooooooooooooooooooting")
 		bullet.texture = load("res://bullet.png")
 		bullet.position = self.position
 		bullet.scale[0] = 8
 		bullet.scale[1] = 4
+		bullet.z_index=999
 		var bullets = $"../../bullets"#$bullets #get_node("/root/Canvas/bullets")
 		bullets.add_child(bullet)
 		
