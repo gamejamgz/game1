@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameContainer.gd" type="Script" id=3]
+
+[node name="GameContainer" type="Node2D"]
+pause_mode = 2
+position = Vector2( 223.571, 187.895 )
+script = ExtResource( 3 )
+
+[node name="Menu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 204.159, 228.164 )
+
+[node name="Game" parent="." instance=ExtResource( 1 )]

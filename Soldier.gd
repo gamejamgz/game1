@@ -25,7 +25,7 @@ func _process(delta):
 		bullet.position = self.position
 		bullet.scale[0] = 8
 		bullet.scale[1] = 4
-		var bullets = get_node("/root/Canvas/bullets")
+		var bullets = $"../../bullets"#$bullets #get_node("/root/Canvas/bullets")
 		bullets.add_child(bullet)
 		
-		get_node("/root/Canvas/SoundSoldierShoot").play()
+		$"../../SoundSoldierShoot".play()
