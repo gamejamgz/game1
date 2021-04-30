@@ -61,6 +61,7 @@ func _physics_process(delta):
 				platforms.append(moving_platform)
 		else:
 			platforms.append(child)
+	
 		
 	
 	var moving_platforms = $map.get_node("moving_platforms").get_children()
@@ -112,8 +113,24 @@ func _physics_process(delta):
 
 	var platforms_underneath = []
 	
+	#print($map/platform3.position)
+	#if(x)
+	
+	print($map2/tr.rect_global_position, " -  ", $map2/tr.rect_size)
+	var myrect = Rect2($map2/tr.rect_global_position, $map2/tr.rect_size)
+	
+	
+	#var kx = $walkzilla.
+	#if(myrect.intersects($walkzilla/sprite.get_rect())):
+	if(x > myrect.position.x and x < myrect.end.x ):
+		$CanvasLayer/indicator.visible = true
+	else:
+		$CanvasLayer/indicator.visible = false
+	
+	
 	for p in platforms:
 		var platform_w = p.texture.get_width() * p.scale[0]
+		#var prect = $p.get_rect()
 		if x < p.position.x + platform_w and x + w > p.position.x:
 			platforms_underneath.append(p)
 	

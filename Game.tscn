@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Canvas.gd" type="Script" id=1]
 [ext_resource path="res://skyline manhatten.png" type="Texture" id=2]
@@ -13,9 +13,11 @@
 [ext_resource path="res://Person1.png" type="Texture" id=11]
 [ext_resource path="res://components/walkzilla/walkzilla.tscn" type="PackedScene" id=12]
 [ext_resource path="res://healthComponent/Healthbar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://bullet.png" type="Texture" id=14]
 
 [node name="Game" type="Node2D"]
 pause_mode = 1
+position = Vector2( 1, 2 )
 script = ExtResource( 1 )
 
 [node name="SoundEat" type="AudioStreamPlayer" parent="."]
@@ -108,6 +110,11 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="indicator" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 131.375, 157.086 )
+scale = Vector2( 25.411, 20.6863 )
+texture = ExtResource( 14 )
 
 [node name="map" type="Node2D" parent="."]
 
@@ -233,3 +240,17 @@ scale = Vector2( 0.952457, 0.229803 )
 texture = ExtResource( 10 )
 centered = false
 script = ExtResource( 5 )
+
+[node name="map2" type="Node2D" parent="."]
+
+[node name="tr" type="TextureRect" parent="map2"]
+margin_left = -15.9149
+margin_top = 384.321
+margin_right = 856.085
+margin_bottom = 673.321
+rect_scale = Vector2( 0.566608, 0.488639 )
+texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
